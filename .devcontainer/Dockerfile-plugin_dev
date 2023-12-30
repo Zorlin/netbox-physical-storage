@@ -18,7 +18,7 @@ RUN /opt/netbox/venv/bin/python3 -m pip install --disable-pip-version-check --no
    && rm -rf /tmp/*
 
 ARG USERNAME=vscode
-ARG USER_UID=1000
+ARG USER_UID=1001
 ARG USER_GID=$USER_UID
 
 RUN useradd -l -md /home/vscode -s /usr/bin/zsh -u $USER_UID $USERNAME \
