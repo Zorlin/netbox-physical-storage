@@ -21,11 +21,10 @@ ARG USERNAME=vscode
 ARG USER_UID=1001
 ARG USER_GID=1001
 
-RUN useradd -l -md /home/vscode -s /usr/bin/zsh -u $USER_UID $USERNAME \
-    && usermod -aG sudo $USERNAME \
-    && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers \
-    && mkdir /opt/netbox/netbox/netbox-physical-storage \
-    && chown $USERNAME:$USERNAME /opt/netbox /etc/netbox /opt/unit -R
+RUN useradd -l -md /home/vscode -s /usr/bin/zsh -u $USER_UID $USERNAME
+RUN usermod -aG sudo $USERNAME
+RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+RUN chown -R $USERNAME:$USERNAME /opt/netbox /etc/netbox /opt/unit
 
 USER $USERNAME
 
