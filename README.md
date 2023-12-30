@@ -2,6 +2,8 @@
 
 A [Netbox](https://github.com/netbox-community/netbox) plugin for physical storage management.
 
+CURRENTLY DOES NOT DO ANYTHING USEFUL. HERE BE DRAGONS, BE WARNED.
+
 ## Features
 
 This plugin plans to provide the following features:
