@@ -33,7 +33,7 @@ class StorageBayTab(PluginTemplateExtension):
         return {
             'storage-bays': (
                 'Storage Bays',  # Display name
-                self.render('netbox_physical_storage/storagebays_tab.html')  # Path to your template
+                self.render('netbox_physical_storage/storagebay_tab.html')  # Path to your template
             )
         }
 
@@ -45,6 +45,6 @@ class StorageBaySection(PluginTemplateExtension):
     def full_width_page(self):
         device = self.context["object"]
 
-        return self.render('netbox_physical_storage/storagebays_section.html', extra_context={ 'device': device })
+        return self.render('netbox_physical_storage/storagebay_section.html', extra_context={ 'device': device })
 
 template_extensions = [StorageDeviceCount, StorageBayTab, StorageBaySection]
