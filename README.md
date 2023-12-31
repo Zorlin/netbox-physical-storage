@@ -85,4 +85,11 @@ PLUGINS_CONFIG = {
 
 ## Screenshots
 
-None yet.
+Storage Devices - List View
+![Storage Devices - List View](docs/img/storage_devices.png)
+
+Storage Devices - Individual View
+![Storage Devices - Individual View](docs/img/storage_device_individual.png)
+
+Storage Devices - Adding a Device
+![Storage Devices - Adding a Device](docs/img/new_storage_device.png)
