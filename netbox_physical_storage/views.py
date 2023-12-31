@@ -1,5 +1,5 @@
 from netbox.views import generic
-from . import forms, models, tables
+from . import filtersets, forms, models, tables
 
 class StorageDeviceView(generic.ObjectView):
     queryset = models.StorageDevice.objects.all()
@@ -14,3 +14,9 @@ class StorageDeviceEditView(generic.ObjectEditView):
 
 class StorageDeviceDeleteView(generic.ObjectDeleteView):
     queryset = models.StorageDevice.objects.all()
+
+class StorageDeviceListView(generic.ObjectListView):
+    queryset = models.StorageDevice.objects.all()
+    table = tables.StorageDeviceTable
+    filterset = filtersets.StorageDeviceFilterSet
+    filterset_form = forms.StorageDeviceFilterForm
