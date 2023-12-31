@@ -6,5 +6,6 @@ class NetBoxPhysicalStorageConfig(PluginConfig):
     description = 'Manage physical storage interfaces and devices in NetBox.'
     version = '0.0.1'
     base_url = 'physical-storage'
+    min_version = '3.4.0'
 
 config = NetBoxPhysicalStorageConfig
