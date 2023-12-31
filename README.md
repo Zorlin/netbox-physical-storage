@@ -24,7 +24,7 @@ Based on the NetBox plugin tutorial by [jeremystretch](https://github.com/jeremy
 - [demo repository](https://github.com/netbox-community/netbox-plugin-demo)
 - [tutorial](https://github.com/netbox-community/netbox-plugin-tutorial)
 
-README and devcontainers/development setup created by [Ryan Merolle](https://github.com/ryanmerolle/netbox-acls)
+Portions taken from [Ryan Merolle](https://github.com/ryanmerolle/netbox-acls)
 
 ## Contributing
 
@@ -73,20 +73,6 @@ PLUGINS_CONFIG = {
     },
 }
 ```
-
-## Developing
-
-### VSCode + Docker + Dev Containers
-
-To develop this plugin further one can use the included .devcontainer configuration. This configuration creates a docker container which includes a fully working netbox installation. Currently it should work when using WSL 2. For this to work make sure you have Docker Desktop installed and the WSL 2 integrations activated.
-
-1. In the WSL terminal, enter `code` to run Visual studio code.
-2. Install the devcontainer extension "ms-vscode-remote.remote-containers"
-3. Press Ctrl+Shift+P and use the "Dev Container: Clone Repository in Container Volume" function to clone this repository. This will take a while depending on your computer
-4. If you'd like the netbox instance to be prepopulated with example data from [netbox-initializers](https://github.com/tobiasge/netbox-initializers) run `make  initializers`
-5. Start the netbox instance using `make all`
-
-Your netbox instance will be served under 0.0.0.0:8000, so it should now be available under localhost:8000.
 
 ## Screenshots
 
