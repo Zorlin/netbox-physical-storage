@@ -1,30 +1,32 @@
 # NetBox Physical Storage Plugin
 
-A [Netbox](https://github.com/netbox-community/netbox) plugin for physical storage management.
+A [Netbox](https://github.com/netbox-community/netbox) plugin for management of physical storage devices such as hard drives, solid state disks and NVMes, and more.
 
-CURRENTLY DOES NOT DO ANYTHING USEFUL. HERE BE DRAGONS, BE WARNED.
+***This is probably not that useful to you yet, and is changing rapidly! HERE BE DRAGONS, BE WARNED.***
 
 ## Features
 
-This plugin plans to provide the following features:
+This plugin currently allows you to do the following:
 
-- Allows you to add Storage Devices
+- Add, track and search storage devices by name + serial number + device type
 
 ## Future features
 
 These are things I've been thinking about, but haven't implemented.
 
-- Storage devices
-    - Size of device
+- Add and manage manufacturers + device models
+    - DPWD information
+    - Drive size
+    - Drive class (enterprise, consumer, nearline, read-intensive, write-intensive)
+    - Spindle technology (HMR, SMR, CMR)
 - History tracking
     - Storage devices can live for a long time. It would be nice to be able to track changes to them over time.
       Where was this drive installed? In which server? Which slot? When was it replaced? What was it replaced with?
       Is it deprecated? Is it active? Is it dead? Was it RMA'd and replaced with a new drive?
-- Extend Component Assignment to allow you to select a Storage Interface
-- Allows you to add Storage Interfaces to Device Types and Devices
+- Extend the Devices model to allow you to add "Storage Bays" as as a component
+- Enable you to then assign Storage Devices to those Storage Bays
 - SAS cabling/topology (potentially with visualisation as a stretch goal?)
-- Performance classes of drives (enterprise, WORM, SMR etc)
-- DWPD?
+- ZFS, LVM and RAID modeling/tracking
 
 ## Credits
 
@@ -33,7 +35,7 @@ Based on the NetBox plugin tutorial by [jeremystretch](https://github.com/jeremy
 - [demo repository](https://github.com/netbox-community/netbox-plugin-demo)
 - [tutorial](https://github.com/netbox-community/netbox-plugin-tutorial)
 
-Portions taken from [Ryan Merolle](https://github.com/ryanmerolle/netbox-acls)
+Portions taken from [Ryan Merolle](https://github.com/ryanmerolle/netbox-acls), thank you for the great examples!
 
 ## Contributing
 
