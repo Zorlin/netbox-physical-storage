@@ -1,0 +1,16 @@
+<div class="card">
+  <h5 class="card-header">
+    Storage Bays
+  </h5>
+  <div class="card-body htmx-container table-responsive"
+    hx-get="{% url 'plugins:netbox_physical_storage:storagebay_list' %}?device_id={{ object.pk }}"
+    hx-trigger="load"
+  ></div>
+  {% if perms.dcim.add_virtualdevicecontext %}
+    <div class="card-footer text-end noprint">
+      <a href="google.com" class="btn btn-sm btn-primary">
+        <span class="mdi mdi-plus-thick" aria-hidden="true"></span> Create Google
+      </a>
+    </div>
+  {% endif %}
+</div>
