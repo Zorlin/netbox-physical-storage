@@ -8,14 +8,19 @@ CURRENTLY DOES NOT DO ANYTHING USEFUL. HERE BE DRAGONS, BE WARNED.
 
 This plugin plans to provide the following features:
 
-- Extends Component Assignment to allow you to select a Storage Interface
-- Allows you to add Storage Interfaces to Device Types and Devices
+- Allows you to add Storage Devices
 
 ## Future features
 
 These are things I've been thinking about, but haven't implemented.
 
+- Storage devices
+    - Size of device
+- Extends Component Assignment to allow you to select a Storage Interface
+- Allows you to add Storage Interfaces to Device Types and Devices
 - SAS cabling/topology (potentially with visualisation as a stretch goal?)
+- Performance classes of drives (enterprise, WORM, SMR etc)
+- DWPD?
 
 ## Credits
 
