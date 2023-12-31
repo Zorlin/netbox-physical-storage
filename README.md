@@ -16,7 +16,11 @@ These are things I've been thinking about, but haven't implemented.
 
 - Storage devices
     - Size of device
-- Extends Component Assignment to allow you to select a Storage Interface
+- History tracking
+    - Storage devices can live for a long time. It would be nice to be able to track changes to them over time.
+      Where was this drive installed? In which server? Which slot? When was it replaced? What was it replaced with?
+      Is it deprecated? Is it active? Is it dead? Was it RMA'd and replaced with a new drive?
+- Extend Component Assignment to allow you to select a Storage Interface
 - Allows you to add Storage Interfaces to Device Types and Devices
 - SAS cabling/topology (potentially with visualisation as a stretch goal?)
 - Performance classes of drives (enterprise, WORM, SMR etc)
