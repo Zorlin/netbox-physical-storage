@@ -17,6 +17,8 @@ class StorageBayDeleteView(generic.ObjectDeleteView):
 class StorageBayListView(generic.ObjectListView):
     queryset = models.StorageBay.objects.all()
     table = tables.StorageBayTable
+    filterset = filtersets.StorageBayFilterSet
+    filterset_form = forms.StorageBayFilterForm
 
 # Display tabs in Devices for Storage Bays
 @register_model_view(Device, name='Storage Bays')

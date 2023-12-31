@@ -3,14 +3,14 @@
     Storage Bays
   </h5>
   <div class="card-body htmx-container table-responsive"
-    hx-get="{% url 'plugins:netbox_physical_storage:storagebay_list' %}?device_id={{ object.pk }}"
+    hx-get="{% url 'plugins:netbox_physical_storage:storagebay_list' %}?device={{ device.pk }}"
     hx-trigger="load"
   ></div>
-  {% if perms.dcim.add_virtualdevicecontext %}
+  <!-- {% if perms.dcim.add_virtualdevicecontext %}
     <div class="card-footer text-end noprint">
       <a href="google.com" class="btn btn-sm btn-primary">
         <span class="mdi mdi-plus-thick" aria-hidden="true"></span> Create Google
       </a>
     </div>
-  {% endif %}
+  {% endif %} -->
 </div>

@@ -43,6 +43,8 @@ class StorageBaySection(PluginTemplateExtension):
     model = 'dcim.device'
 
     def full_width_page(self):
-        return self.render('netbox_physical_storage/storagebays_section.html')
+        device = self.context["object"]
+
+        return self.render('netbox_physical_storage/storagebays_section.html', extra_context={ 'device': device })
 
 template_extensions = [StorageDeviceCount, StorageBayTab, StorageBaySection]
