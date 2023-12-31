@@ -17,24 +17,6 @@ COPY requirements-dev.txt /tmp/pip-tmp/
 RUN /opt/netbox/venv/bin/python3 -m pip install --disable-pip-version-check --no-cache-dir install -r /tmp/pip-tmp/requirements-dev.txt \
    && rm -rf /tmp/*
 
-ARG USERNAME=vscode
-ARG USER_UID=1001
-ARG USER_GID=1001
-
-RUN useradd -l -md /home/vscode -s /usr/bin/zsh -u $USER_UID $USERNAME
-RUN usermod -aG sudo $USERNAME
-RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
-RUN chown -R $USERNAME:$USERNAME /opt/netbox /etc/netbox /opt/unit
-
-USER $USERNAME
-
-SHELL ["/bin/bash", "-o", "pipefail", "-c"]
-# Add oh my zsh
-RUN wget --quiet https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
-
-COPY .bashrc /home/vscode/.bashrc
-COPY .zshrc /home/vscode/.zshrc
-
 RUN /opt/netbox/venv/bin/pip install  --no-warn-script-location netbox-initializers==${NETBOX_INITIALIZERS_VARIANT}
 
 WORKDIR /opt/netbox/netbox/netbox-physical-storage
