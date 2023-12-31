@@ -11,5 +11,5 @@ class StorageDeviceTable(NetBoxTable):
 
     class Meta(NetBoxTable.Meta):
         model = StorageDevice
-        fields = ('pk', 'id', 'name', 'storage_device_type', 'serial_number', 'mount_point', 'comments')
-        default_columns = ('name', 'storage_device_type')
+        fields = ('pk', 'id', 'name', 'storage_device_type', 'serial_number', 'comments')
+        default_columns = ('name', 'storage_device_type', 'serial_number')

@@ -9,7 +9,7 @@ class StorageDeviceSerializer(NetBoxModelSerializer):
     class Meta:
         model = StorageDevice
         fields = [
-            'id', 'url', 'name', 'storage_device_type', 'serial_number', 'mount_point', 'comments', 'tags', 'custom_fields', 'created',
+            'id', 'url', 'name', 'storage_device_type', 'serial_number', 'comments', 'tags', 'custom_fields', 'created',
             'last_updated',
         ]
 

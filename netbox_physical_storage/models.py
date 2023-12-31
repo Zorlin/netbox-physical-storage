@@ -25,10 +25,6 @@ class StorageDevice(NetBoxModel):
         max_length=100,
         blank=True
     )
-    mount_point = models.CharField(
-        max_length=100,
-        blank=True
-    )
     comments = models.TextField(
         blank=True
     )

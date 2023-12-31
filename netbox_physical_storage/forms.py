@@ -22,4 +22,4 @@ class StorageDeviceForm(NetBoxModelForm):
 
     class Meta:
         model = StorageDevice
-        fields = ('name', 'storage_device_type', 'serial_number', 'mount_point', 'comments')
+        fields = ('name', 'storage_device_type', 'serial_number', 'comments')
