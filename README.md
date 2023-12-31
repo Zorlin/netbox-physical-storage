@@ -35,7 +35,10 @@ Based on the NetBox plugin tutorial by [jeremystretch](https://github.com/jeremy
 - [demo repository](https://github.com/netbox-community/netbox-plugin-demo)
 - [tutorial](https://github.com/netbox-community/netbox-plugin-tutorial)
 
-Portions taken from [Ryan Merolle](https://github.com/ryanmerolle/netbox-acls), thank you for the great examples!
+Portions taken from [Ryan Merolle's netbox-acls](https://github.com/ryanmerolle/netbox-acls)
+Portions taken from [tbotnz/netbox_floorplan](https://github.com/tbotnz/netbox_floorplan/tree/master)
+
+Thank you to the above authors for the great examples!
 
 ## Contributing
 
