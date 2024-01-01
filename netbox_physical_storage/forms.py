@@ -1,8 +1,43 @@
-from .models import StorageDevice, StorageDeviceTypeChoices, StorageBay
 from utilities.forms.fields import CommentField
 from django import forms
 from netbox.forms import NetBoxModelForm, NetBoxModelFilterSetForm
 from dcim.models import Device
+from .models import StorageDevice, StorageBay, StorageManufacturer, StorageDeviceType
+
+class StorageDeviceTypeFilterForm(NetBoxModelFilterSetForm):
+    model = StorageDeviceType
+
+    name = forms.CharField(
+        required=False
+    )
+
+class StorageDeviceTypeForm(NetBoxModelForm):
+    comments = CommentField()
+
+    SIZE_UNITS = (
+        ('GB', 'GB'),
+        ('TB', 'TB'),
+        ('PB', 'PB'),
+    )
+    size_unit = forms.ChoiceField(choices=SIZE_UNITS, required=True, label="Size unit")
+
+    class Meta:
+        model = StorageDeviceType
+        fields = ('name', 'manufacturer', 'protocol', 'form_factor', 'model_number', 'size', 'size_unit', 'part_number', 'comments')
+
+class StorageManufacturerFilterForm(NetBoxModelFilterSetForm):
+    model = StorageManufacturer
+
+    name = forms.CharField(
+        required=False
+    )
+
+class StorageManufacturerForm(NetBoxModelForm):
+    comments = CommentField()
+
+    class Meta:
+        model = StorageManufacturer
+        fields = ('name', 'slug', 'description', 'comments')
 
 class StorageBayFilterForm(NetBoxModelFilterSetForm):
     model = StorageBay
@@ -14,7 +49,7 @@ class StorageBayFilterForm(NetBoxModelFilterSetForm):
     )
 
     form_factor = forms.MultipleChoiceField(
-        choices=StorageDeviceTypeChoices,
+        choices=StorageBay.form_factor_choices,
         required=False
     )
 
@@ -34,14 +69,9 @@ class StorageDeviceFilterForm(NetBoxModelFilterSetForm):
         required=False
     )
 
-    storage_device_type = forms.MultipleChoiceField(
-        choices=StorageDeviceTypeChoices,
-        required=False
-    )
-
 class StorageDeviceForm(NetBoxModelForm):
     comments = CommentField()
 
     class Meta:
         model = StorageDevice
-        fields = ('name', 'storage_device_type', 'serial_number', 'comments')
+        fields = ('name', 'storage_device_model', 'storage_bay', 'serial_number', 'comments')

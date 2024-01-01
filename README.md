@@ -10,6 +10,9 @@ This plugin currently allows you to do the following:
 
 - Add, track and search storage devices by name + serial number + device type
 
+## Known bugs
+* The form is supposed to multiply your input to get to the correct value of bytes for gigabyte, terabyte and petabyte. This is not working correctly yet.
+
 ## Future features
 
 These are things I've been thinking about, but haven't implemented.

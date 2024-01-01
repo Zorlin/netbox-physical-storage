@@ -50,7 +50,7 @@ storagebay_menu = (
     PluginMenuItem(
         link='plugins:netbox_physical_storage:storagebay_list',
         link_text='Storage Bays',
-        buttons=storagedevice_buttons,
+        buttons=storagebay_buttons,
     ),
 )
 
@@ -59,7 +59,7 @@ storagebay_menu = (
 #
 storagedevicetype_buttons = [
     PluginMenuButton(
-        link='plugins:netbox_physical_storage:storagedevice_add',
+        link='plugins:netbox_physical_storage:storagedevicetype_add',
         title='Add',
         icon_class='mdi mdi-plus-thick',
         color=ButtonColorChoices.GREEN,
@@ -71,7 +71,7 @@ storagedevicetype_buttons = [
 #
 storagedevicemanufacturer_buttons = [
     PluginMenuButton(
-        link='plugins:netbox_physical_storage:storagedevice_add',
+        link='plugins:netbox_physical_storage:storagemanufacturer_add',
         title='Add',
         icon_class='mdi mdi-plus-thick',
         color=ButtonColorChoices.GREEN,
@@ -83,12 +83,12 @@ storagedevicemanufacturer_buttons = [
 #
 storagedevicetype_menu = (
     PluginMenuItem(
-        link='plugins:netbox_physical_storage:storagedevice_list',
+        link='plugins:netbox_physical_storage:storagedevicetype_list',
         link_text='Storage Device Types',
         buttons=storagedevicetype_buttons,
     ),
     PluginMenuItem(
-        link='plugins:netbox_physical_storage:storagedevice_list',
+        link='plugins:netbox_physical_storage:storagemanufacturer_list',
         link_text='Manufacturers',
         buttons=storagedevicemanufacturer_buttons,
     )

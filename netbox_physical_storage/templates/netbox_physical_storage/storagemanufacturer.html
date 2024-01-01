@@ -1,0 +1,48 @@
+<!-- This is for DISPLAYING storage manufacturers, as in the individual item view -->
+<!-- Fields should be 'name', 'manufacturer', 'protocol', 'model_number', 'part_number', 'size', 'comments') -->
+{% extends 'generic/object.html' %}{% block content %}
+<div class="row mb-3">
+  <div class="col col-md-6">
+    <div class="card">
+      <h5 class="card-header">Storage Bays</h5>
+      <div class="card-body">
+        <table class="table table-hover attr-table">
+          <tr>
+            <th scope="row">Name</th>
+            <td>{{ object.name }}</td>
+          </tr>
+          <tr>
+            <th scope="row">manufacturer</th>
+            <td>{{ object.manufacturer }}</td>
+          </tr>
+          <tr>
+            <th scope="row">protocol</th>
+            <td>{{ object.protocol }}</td>
+          </tr>
+          <tr>
+            <th scope="row">model_number</th>
+            <td>{{ object.model_number }}</td>
+          </tr>
+          <tr>
+            <th scope="row">part_number</th>
+            <td>{{ object.part_number }}</td>
+          </tr>
+          <tr>
+            <th scope="row">size</th>
+            <td>{{ object.size }}</td>
+          </tr>
+          <tr>
+            <th scope="row">comments</th>
+            <td>{{ object.comments }}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    {% include 'inc/panels/custom_fields.html' %}
+  </div>
+  <div class="col col-md-6">
+    {% include 'inc/panels/tags.html' %}
+    {% include 'inc/panels/comments.html' %}
+  </div>
+</div>
+{% endblock content %}

@@ -1,6 +1,27 @@
 from rest_framework import serializers
 from netbox.api.serializers import NetBoxModelSerializer, WritableNestedSerializer
-from ..models import StorageDevice, StorageBay
+from ..models import StorageDevice, StorageBay, StorageManufacturer, StorageDeviceType
+
+class StorageDeviceTypeSerializer(NetBoxModelSerializer):
+    url = serializers.HyperlinkedIdentityField(
+        view_name='plugins-api:netbox_physical_storage-api:storagedevicetype-detail'
+    )
+    class Meta:
+        model = StorageDeviceType
+        fields = [
+            'id', 'url', 'name', 'manufacturer', 'protocol', 'model_number', 'size', 'part_number', 'comments',
+            'tags', 'custom_fields', 'created', 'last_updated',
+        ]
+
+class StorageManufacturerSerializer(NetBoxModelSerializer):
+    url = serializers.HyperlinkedIdentityField(
+        view_name='plugins-api:netbox_physical_storage-api:storagemanufacturer-detail'
+    )
+    class Meta:
+        model = StorageManufacturer
+        fields = [
+            'id', 'url', 'name', 'slug', 'description', 'comments', 'tags', 'custom_fields', 'created', 'last_updated',
+        ]
 
 class StorageBaySerializer(NetBoxModelSerializer):
     url = serializers.HyperlinkedIdentityField(
@@ -20,7 +41,7 @@ class StorageDeviceSerializer(NetBoxModelSerializer):
     class Meta:
         model = StorageDevice
         fields = [
-            'id', 'url', 'name', 'storage_device_type', 'serial_number', 'comments', 'tags', 'custom_fields', 'created',
+            'id', 'url', 'name', 'storage_device_model', 'protocol', 'storage_bay', 'device', 'serial_number', 'comments', 'tags', 'custom_fields', 'created',
             'last_updated',
         ]
 
